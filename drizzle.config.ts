@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 export default defineConfig({
-//   schema: "./src/schema/index.ts",
+  schema: "./src/db/schema.ts",
   dialect: "postgresql",
   dbCredentials: {
     url: process.env.DATABASE_URL!,
@@ -11,3 +11,6 @@ export default defineConfig({
   verbose: true,
   strict: true,
 });
+
+
+// npx drizzle-kit studio

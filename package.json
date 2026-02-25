@@ -2,21 +2,35 @@
   "name": "practicee",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node index.js",
-    "db:studio": "npx drizzle-kit studio"
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "db:studio": "npx drizzle-kit studio",
+    "db:push": "npx drizzle-kit push",
+    "db:migrate": "npx drizzle-kit migrate",
+    "test": "tsc --noEmit",
+    "test:crud": "ts-node src/scripts/test-crud.ts"
   },
   "author": "somya tomar",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.4",
     "drizzle-orm": "^0.45.1",
     "express": "^5.2.1",
-    "pg": "^8.18.0"
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.18.0",
+    "postgres": "^3.4.8"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.2.3",
     "@types/pg": "^8.16.0",
-    "drizzle-kit": "^0.31.9"
+    "drizzle-kit": "^0.31.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
